@@ -88,6 +88,69 @@ print(type)
 print(name)
 print(number)
 
+//Array: colecao ordenada de objetos do mesmo tipo
 
+var nomes = ["Fulano", "Ciclano", "Beltrano"] //swift sabe que é um array de string
+
+var namesB: [String] = ["Fulano", "Ciclano", "Beltrano"]
+
+var lotaryNumbers: [Int] = [] //so posso criar um array vazio definindo o tipo dele
+
+var phoneNumbers: [String]? //como eu crio um array nulo? Usando optional, mas ai preciso definir o tipo
+
+var ages:[UInt8] = [9,7,22,15,45]
+
+//nao existe idade negativa, portanto eles sao do tipo UInt8 - nao pode ser negativo e 8 bits
+
+var guests = ["Joao", "Paula", "Alexandre","Patricia", "Sandra"]
+print("---------")
+print(guests)
+print(guests.count)
+print(guests.isEmpty) //devolve um boolean e diz se o array está vazio ou não
+print("---------")
+//posso acessar um elemento do array por colchetes
+let secondGuest = guests[1]
+print(secondGuest)
+guests[0] = "Henrique" //aqui estmaos alterando quem é o item de index 0 do array
+print(guests)
+print("---------")
+guests[0...1] = ["Eric", "Roberto", "Bia", "Joana"]
+print(guests)
+
+if let firts =  guests.first {
+print(firts) //devolve o primeiro elemento e é optional
+}
+
+if let last =  guests.last {
+print(last) //devolve o ultimo elemento e é optional
+}
+
+//adicionar elementos num array
+
+guests += ["Sandro", "Helena", "Ellen"] //adiciona no fim do array
+print(guests)
+
+guests.append("Edna") // adiciona no fim do array
+
+print(guests)
+
+//quero que meu segundo convidado passe a ser outra pessoa
+
+guests.insert("Romildo", at: 2)
+
+print(guests)
+
+//remover elementos
+
+//guests.removeFirst() //remove o primeiro item
+//guests.removeLast() //remove ultimo item
+//guests.remove(at: 2) //remove a posicao escolhida
+
+
+//será que convidei a Helena?
+
+if guests.contains("Romildo") {
+    print("Romildo foi convidado")
+}
 
 
