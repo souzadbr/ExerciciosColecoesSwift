@@ -195,3 +195,38 @@ print(states.count)
 
 print(states.keys)
 print(states.values)
+
+//Controle de fluxo com While e For in
+
+//FOR IN
+
+//for ai vc diz o nome da constante que vai receber o valor dessa sua sequencia chamada day + o range para criar uma sequencia de 1 a 30
+
+for day in 1...30 {
+    print("Estou no \(day) de Setembro")
+}
+for _ in 1...5 {
+    print("Dedique-se ao curso de desenvolvimento iOS")
+}
+
+let students = [
+
+"Joao Francisco",
+"Pedro Henrique",
+"Gustavo Oliveira",
+"Janaina Santos",
+"Francisco José"
+
+]
+for student in students{
+    print("O aluno \(student) veio na aula de hoje")
+}
+
+let name1 = "Debora Ridrigues de Souza"
+
+for (index, letter) in name1.enumerated() {
+    print(index,letter)
+}
+
+
+
