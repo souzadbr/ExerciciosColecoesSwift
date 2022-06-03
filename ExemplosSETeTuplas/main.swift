@@ -16,7 +16,7 @@ var movies: Set<String> = [
     "Vingadores",
     "Jurassic Park",
     "De Volta para o Futuro"
-
+    
 ]
 
 var movies2 = Set<String>()
@@ -45,12 +45,12 @@ if movies.contains("Vingadores"){
 }
 
 var myWifemovies: Set<String> = [
-"De Repente 30",
-"Mensagem para Você",
-"Sintonia do Amor",
-"De Volta para o Futuro",
-"Jurassic Park"
-
+    "De Repente 30",
+    "Mensagem para Você",
+    "Sintonia do Amor",
+    "De Volta para o Futuro",
+    "Jurassic Park"
+    
 ]
 
 let favoriteMovies = movies.intersection(myWifemovies)
@@ -118,11 +118,11 @@ guests[0...1] = ["Eric", "Roberto", "Bia", "Joana"]
 print(guests)
 
 if let firts =  guests.first {
-print(firts) //devolve o primeiro elemento e é optional
+    print(firts) //devolve o primeiro elemento e é optional
 }
 
 if let last =  guests.last {
-print(last) //devolve o ultimo elemento e é optional
+    print(last) //devolve o ultimo elemento e é optional
 }
 
 //adicionar elementos num array
@@ -158,7 +158,7 @@ if guests.contains("Romildo") {
 //iguais os arrays ja podemos iniciar o dicionario com varios valores
 
 var states = [
-
+    
     "AC": "Acre",
     "AL": "Alagoas",
     "AP": "Amapá",
@@ -210,13 +210,13 @@ for _ in 1...5 {
 }
 
 let students = [
-
-"Joao Francisco",
-"Pedro Henrique",
-"Gustavo Oliveira",
-"Janaina Santos",
-"Francisco José"
-
+    
+    "Joao Francisco",
+    "Pedro Henrique",
+    "Gustavo Oliveira",
+    "Janaina Santos",
+    "Francisco José"
+    
 ]
 for student in students{
     print("O aluno \(student) veio na aula de hoje")
@@ -229,4 +229,45 @@ for (index, letter) in name1.enumerated() {
 }
 
 
+//While : continuar a execucao enquanto a condicoes especificada seja verdadeira
 
+var life = 10
+
+while life > 0 {
+    print("O jogador está com \(life) vidas")
+    life = life - 1
+}
+
+import Foundation
+
+var megaSena: [Int] = []
+
+while megaSena.count < 6 {
+    let number = Int (arc4random_uniform(60)+1)
+    if !megaSena.contains(number) {
+        megaSena.append(number)
+    }
+    
+}
+print(megaSena.sorted()) //vem um array ordenado
+
+
+var tries = 0
+var diceNumber = 0
+
+repeat{
+    tries += 1
+    diceNumber = Int(arc4random_uniform(6) + 1)
+} while diceNumber != 6
+
+print("Voce tirou 6 apos \(tries) tentativas")
+
+
+let grades = [10.0, 9.0, 7.0, 9.5, 5.0, 1.0, 6.5, 10.0, 10.0, 8.0]
+for grade in grades {
+    print(grade)
+    if grade < 0.0 || grade > 10.0 {
+        print("Nota valida")
+        break
+    }
+}
