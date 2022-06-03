@@ -153,4 +153,45 @@ if guests.contains("Romildo") {
     print("Romildo foi convidado")
 }
 
+//Manipulando Dicinarios: colcecao não ordeanda de objetos de mesmo tipo, que são acessados atraves de uma chave
 
+//iguais os arrays ja podemos iniciar o dicionario com varios valores
+
+var states = [
+
+    "AC": "Acre",
+    "AL": "Alagoas",
+    "AP": "Amapá",
+    "AM": "Amazonas",
+    "BA": "Bahia",
+    "CE": "Ceara",
+    "DF": "Distrito Federal",
+    "ES": "Espirito Santo"
+]
+
+//definir tipo do dicionario chave e valor - iniciando dicionario vazio valor 0
+var studentGrade: [String: Double] = [:]
+
+
+//como add novo estados
+
+states["GO"] = "Goiaz"
+
+//states["GO"] = "Goias"
+print (states)
+
+let oldGo = states.updateValue("Goias", forKey: "GO")
+print(oldGo)
+if let oldGo = oldGo {
+    print(oldGo)
+}
+
+states["GO"] = nil // exclui o estado do dicionario
+
+print(states)
+
+print(states.count)
+
+
+print(states.keys)
+print(states.values)
