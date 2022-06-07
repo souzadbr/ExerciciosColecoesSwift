@@ -271,3 +271,73 @@ for grade in grades {
         break
     }
 }
+
+//Enumeradores ou Enum = grupo nomeado que pode ter valores associados aos mesmos. Conjunto limitado de valores
+//boa pratica o nome do enum ser com letra maiuscula e os cases em minuscula
+
+enum CompassPoint {
+    case north
+    case east
+    case west
+    case south
+}
+//variavel do tipo CompassPoint podendo ter acesso dessa forma as opcoes descritas no cases do enum
+var direction: CompassPoint = CompassPoint.east
+
+//posso usar apenas o valor .east tbm
+
+direction = .south
+
+//nao precisa de um case para cada
+enum SeatPosition: String{
+    case aisle = "Corredor", midle = "Meio", window = " Janela"
+}
+
+var passengerSeat = SeatPosition.window
+
+switch passengerSeat {
+case .aisle:
+    print ("O passageiro esta sentado no corredor")
+case .midle:
+    print ("O passageiro esta sentado no meio")
+case .window :
+    print ("O passageiro esta sentado na janela")
+}
+print(passengerSeat.rawValue)
+
+//enum podem vir alimentados de um valor bruto padrao rawuValue
+
+enum Month: Int {
+    case january
+    case february
+    case march
+    case april
+    case may
+    case june
+    case july
+    case august
+    case september
+    case octuber
+    case november
+    case december
+}
+
+print(Month.august.rawValue)
+
+//valores associados (Associated Values)
+
+enum Messure {
+    case weight(Double)
+    case age (Int)
+    case size(width: Double, height: Double)
+}
+
+let measure: Messure = .size(width: 49.89, height: 12.8)//.weight(89.76)//.age(30)
+switch measure {
+case .weight(let weight):
+    print("O seu peso é: \(weight)")
+case .age(let age):
+    print("A sua idade é: \(age)")
+case .size(let size):
+    print("As suas medidas de tamanho são: \(size.width)m de largura e  \(size.height)m de altura ")
+}
