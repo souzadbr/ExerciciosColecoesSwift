@@ -341,3 +341,52 @@ case .age(let age):
 case .size(let size):
     print("As suas medidas de tamanho são: \(size.width)m de largura e  \(size.height)m de altura ")
 }
+
+//Estruturas (Struct)
+
+//todos os tipos que usamos ate agora sao na verdade structs
+
+let age: Int = 20
+let nameDaDebora: String = "Debora"
+
+struct Person {
+    //variaveis aqui são propriedades. A struct tbm pode ter funcoes (metodos)
+    var name: String?
+    var age: Int = 0
+
+//    init(name: String) { //self represeta a atributo da propria struct
+//        self.name = name
+//    }
+//
+    func sayHello() {
+        print("Hello")
+    }
+    mutating func incrementAge() { //se um metodo da struct modifica alguma de suas propriedades vc usa essa palavrinha reservada mutating
+        age += 1
+    }
+}
+
+var person = Person(name: "Debora", age: 30) //processo de inicializacao ou construcao
+//pode ser chamado de uma segunda forma: Person.init(name: ,age: )
+person.sayHello()
+person.incrementAge()
+person.name = "Roberto"
+if let pessoa = person.name {
+    print(pessoa)
+}
+
+
+var newPerson = Person(name: "Debora") //quando crio um contrutor eu matro o metodo iniciliazador que foi feito automaticamente pelo swift
+
+//Computed Properties (Propriedades computadas)
+
+struct Temperature {
+    var celsius: Double
+    var fahrenheit: Double {
+        return celsius * 1.8 + 32
+    }
+}
+var temperature = Temperature(celsius: 25)
+print(temperature.celsius)
+print(temperature.fahrenheit) //semopre que ele for retornar esse valor ele vai pegar celsius computar e devolver o valor sem ser necessario que o valor esteja no cosntrutor da struct
+//com uso da struct eu passo a poder fazer meu proprios tipos 
